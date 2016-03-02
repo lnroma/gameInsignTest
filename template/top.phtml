@@ -1,0 +1,21 @@
+<?php /** @var App $this */ ?>
+<table>
+    <tr>
+        <td>place</td>
+        <td>user</td>
+        <td>score</td>
+        <td>diff</td>
+    </tr>
+    <?php foreach ($this->getTop($this->getOffset()) as $top): ?>
+        <tr>
+            <td><?php echo $top['place'] ?></td>
+            <td><?php echo $top['user'] ?></td>
+            <td><?php echo $top['score'] ?></td>
+            <?php if (isset($this->getDiff($this->getOffset())[$top['user']])): ?>
+                <td><?php echo($this->getDiff($this->getOffset())[$top['user']] - $top['place']) ?></td>
+            <?php else: ?>
+                <td>0</td>
+            <?php endif; ?>
+        </tr>
+    <?php endforeach; ?>
+</table>
