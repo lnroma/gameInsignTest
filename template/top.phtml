@@ -11,8 +11,8 @@
             <td><?php echo $top['place'] ?></td>
             <td><?php echo $top['user'] ?></td>
             <td><?php echo $top['score'] ?></td>
-            <?php if (isset($this->getDiff($this->getOffset())[$top['user']])): ?>
-                <td><?php echo($this->getDiff($this->getOffset())[$top['user']] - $top['place']) ?></td>
+            <?php if (isset($this->getDiff()[$top['user']])): ?>
+                <td><?php echo($this->getDiff()[$top['user']] - $top['place']) ?></td>
             <?php else: ?>
                 <td>0</td>
             <?php endif; ?>
